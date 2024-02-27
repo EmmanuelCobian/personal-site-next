@@ -27,20 +27,21 @@ export default function Home() {
       state = 2
     }
 
+    const [clicked, setClicked] = useState(false)
     const [active, setActive] = useState(state)
 
     const handleClick = (item) => {
-      setActive(item)
+      // setActive(item)
     }
 
     return (
       <div className='my-5'>
-        <a href='#about' onClick={() => handleClick(0)} className='text-decoration-none text-black'>
+        <a href='#about' onClick={() => handleClick(0)} className={classnames('text-decoration-none text-black')}>
           <div className={classnames('row', active == 0 ? styles.active : styles.nav_itm)}>
             <div className='col-3'>
               <hr className={styles.hr} />
             </div>
-            <div className='col-3'>
+            <div className='col-9'>
               <p>About</p>
             </div>
           </div>
@@ -100,7 +101,7 @@ export default function Home() {
   const width = useWindowWidth()
   const isBreakpoint = width < 992
   const aboutRef = useRef()
-  const expRef = useRef() 
+  const expRef = useRef()
   const projRef = useRef()
   const aboutIsVisible = useIsVisible(aboutRef)
   const expIsVisible = useIsVisible(expRef)
@@ -116,13 +117,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <section className="container mt-5">
+        <section className="container pt-5">
           <div className="row">
             <div className={classnames("col-md-12 col-lg-6", styles.bio)} id="bio">
               <h3>Hi, my name is Emmanuel</h3>
               <h3>I'm a software developer</h3>
               <p className={styles.intro}>I'm a senior studying computer science at UC Berkeley and a software developer who builds web apps.</p>
-              {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]}/>)}
+              {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]} />)}
 
             </div>
           </div>
@@ -140,7 +141,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div id="experience" className="my-5" ref={expRef}>
+            <div id="experience" className="pt-5" ref={expRef}>
               {isBreakpoint ? (<h4 className={styles.title}>Experience</h4>) : (<div>&nbsp;</div>)}
 
               <div className={styles.exp_itm}>
@@ -226,8 +227,8 @@ export default function Home() {
               </a>
             </div>
 
-            <div id="projects" className="my-5" ref={projRef}>
-              {isBreakpoint ? (<h4 className={styles.title}>Projects</h4>) : (<div>&nbsp;</div>)}
+            <div className="py-5" ref={projRef}>
+              {isBreakpoint ? (<h4 id='projects' className={styles.title}>Projects</h4>) : (<div id='projects'>&nbsp;</div>)}
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
@@ -246,36 +247,36 @@ export default function Home() {
                   <Badge pill className={styles.text_bg_custom}>Spotify API</Badge>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.proj_itm}>
-              <div className={styles.proj_desc}>
-                <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
-                  <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className="bi-arrow-up-right"></i></p>
-                </a>
-                <p>
-                  Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
-                </p>
-                <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
-                <Badge pill className={styles.text_bg_custom}>Styled Components</Badge>
-                <Badge pill className={styles.text_bg_custom}>Web Scraping</Badge>
-                <Badge pill className={styles.text_bg_custom}>SQL</Badge>
-                <Badge pill className={styles.text_bg_custom}>Databases</Badge>
+              <div className={styles.proj_itm}>
+                <div className={styles.proj_desc}>
+                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className="bi-arrow-up-right"></i></p>
+                  </a>
+                  <p>
+                    Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Styled Components</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Web Scraping</Badge>
+                  <Badge pill className={styles.text_bg_custom}>SQL</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Databases</Badge>
+                </div>
               </div>
-            </div>
 
-            <div className={styles.proj_itm}>
-              <div className={styles.proj_desc}>
-                <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/face-api" target="_blank">
-                  <p className={classnames(styles.exp_title, styles.exp_share)}>Facial Expressions Music Player <i className="bi-arrow-up-right"></i></p>
-                </a>
-                <p>
-                  This web application uses facial recognition to detect a user's facial expressions and play music based on the emotion detected. The application uses the face-api.js library to detect facial expressions.
-                </p>
-                <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
-                <Badge pill className={styles.text_bg_custom}>Web Sockets</Badge>
-                <Badge pill className={styles.text_bg_custom}>Facial Recognition</Badge>
-                <Badge pill className={styles.text_bg_custom}>MaxMSP</Badge>
+              <div className={styles.proj_itm}>
+                <div className={styles.proj_desc}>
+                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/face-api" target="_blank">
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>Facial Expressions Music Player <i className="bi-arrow-up-right"></i></p>
+                  </a>
+                  <p>
+                    This web application uses facial recognition to detect a user's facial expressions and play music based on the emotion detected. The application uses the face-api.js library to detect facial expressions.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Web Sockets</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Facial Recognition</Badge>
+                  <Badge pill className={styles.text_bg_custom}>MaxMSP</Badge>
+                </div>
               </div>
             </div>
           </div>

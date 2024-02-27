@@ -4,32 +4,30 @@
   width: 25px;
   color: black;
   background-color: #000;
-  transition: 0.2s;
-}
-
-.hr.transition {
-  border: none;
-  height: 2px;
-  color: black;
-  background-color: #000;
-  width: 75px;
+  position: relative;
+  top: -10%;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .active {
-  width: 250px;
-  transition: 0.2s;
+  width: 400px;
   & .hr {
-    width: 50px;
+    width: 75px;
   }
 }
 
 .nav_itm {
   width: 250px;
+  transition: all 0.2s;
 }
 
 .nav_itm:hover {
+  width: 400px;
   & .hr {
-    width: 50px;
+    width: 75px;
   }
 }
 
