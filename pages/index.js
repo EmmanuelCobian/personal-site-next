@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react"
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
-import Badge from 'react-bootstrap/Badge'
-import classnames from 'classnames'
+import Badge from "react-bootstrap/Badge"
+import classnames from "classnames"
 
 export default function Home() {
   const Socials = () => {
     return (
-      <div className='mb-5'>
+      <div className="mb-5">
         <a href="https://github.com/EmmanuelCobian" target="_blank"><i className={classnames("bi-github fs-3", styles.socials)}></i></a>
         <a href="https://www.linkedin.com/in/emmanuel-cobian/" target="_blank"><i
           className={classnames("bi-linkedin fs-3 mx-3", styles.socials)}></i></a>
@@ -35,35 +35,35 @@ export default function Home() {
     }
 
     return (
-      <div className='my-5'>
-        <a href='#about' onClick={() => handleClick(0)} className={classnames('text-decoration-none text-black')}>
-          <div className={classnames('row', active == 0 ? styles.active : styles.nav_itm)}>
-            <div className='col-3'>
+      <div className="my-5">
+        <a href="#about" onClick={() => handleClick(0)} className={classnames("text-decoration-none text-black")}>
+          <div className={classnames("row", active == 0 ? styles.active : styles.nav_itm)}>
+            <div className="col-3">
               <hr className={styles.hr} />
             </div>
-            <div className='col-9'>
+            <div className="col-9">
               <p>About</p>
             </div>
           </div>
         </a>
 
-        <a href='#experience' onClick={() => handleClick(1)} className='text-decoration-none text-black'>
-          <div className={classnames('row', active == 1 ? styles.active : styles.nav_itm)}>
-            <div className='col-3'>
+        <a href="#experience" onClick={() => handleClick(1)} className="text-decoration-none text-black">
+          <div className={classnames("row", active == 1 ? styles.active : styles.nav_itm)}>
+            <div className="col-3">
               <hr className={styles.hr} />
             </div>
-            <div className='col-9'>
+            <div className="col-9">
               <p>Experience</p>
             </div>
           </div>
         </a>
 
-        <a href='#projects' onClick={() => handleClick(2)} className='text-decoration-none text-black'>
-          <div className={classnames('row mb-5', active == 2 ? styles.active : styles.nav_itm)}>
-            <div className='col-3'>
+        <a href="#projects" onClick={() => handleClick(2)} className="text-decoration-none text-black">
+          <div className={classnames("row mb-5", active == 2 ? styles.active : styles.nav_itm)}>
+            <div className="col-3">
               <hr className={styles.hr} />
             </div>
-            <div className='col-9'>
+            <div className="col-9">
               <p>Projects</p>
             </div>
           </div>
@@ -91,9 +91,9 @@ export default function Home() {
     const handleResize = () => { setWidth(window.innerWidth) }
 
     useEffect(() => {
-      window.addEventListener('resize', handleResize)
+      window.addEventListener("resize", handleResize)
       handleResize()
-      return () => window.removeEventListener('resize', handleResize)
+      return () => window.removeEventListener("resize", handleResize)
     }, [])
     return width
   }
@@ -121,8 +121,8 @@ export default function Home() {
           <div className="row">
             <div className={classnames("col-md-12 col-lg-6", styles.bio)} id="bio">
               <h3>Hi, my name is Emmanuel</h3>
-              <h3>I'm a software developer</h3>
-              <p className={styles.intro}>I'm a senior studying computer science at UC Berkeley and a software developer who builds web apps.</p>
+              <h3>I’m a software developer</h3>
+              <p className={styles.intro}>I’m a senior studying computer science at UC Berkeley and a software developer who builds web apps.</p>
               {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]} />)}
 
             </div>
@@ -228,7 +228,7 @@ export default function Home() {
             </div>
 
             <div className="py-5" ref={projRef}>
-              {isBreakpoint ? (<h4 id='projects' className={styles.title}>Projects</h4>) : (<div id='projects'>&nbsp;</div>)}
+              {isBreakpoint ? (<h4 id="projects" className={styles.title}>Projects</h4>) : (<div id="projects">&nbsp;</div>)}
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
@@ -237,7 +237,7 @@ export default function Home() {
                   </a>
                   <p>
                     A full-stack web application that connects to the Spotify API
-                    and analyzes a user's top artists and playlists to provide
+                    and analyzes a user’s top artists and playlists to provide
                     personalized music insights. Uses a backend using Next.js API
                     routes to call the Spotify API and process data to generate
                     musical profiles and analysis for logged-in users.
@@ -270,7 +270,7 @@ export default function Home() {
                     <p className={classnames(styles.exp_title, styles.exp_share)}>Facial Expressions Music Player <i className="bi-arrow-up-right"></i></p>
                   </a>
                   <p>
-                    This web application uses facial recognition to detect a user's facial expressions and play music based on the emotion detected. The application uses the face-api.js library to detect facial expressions.
+                    This web application uses facial recognition to detect a user’s facial expressions and play music based on the emotion detected. The application uses the face-api.js library to detect facial expressions.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
                   <Badge pill className={styles.text_bg_custom}>Web Sockets</Badge>
