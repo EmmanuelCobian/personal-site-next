@@ -7,13 +7,13 @@ import classnames from 'classnames'
 export default function Home() {
   const Socials = () => {
     return (
-      <>
+      <div className='mb-5'>
         <a href="https://github.com/EmmanuelCobian" target="_blank"><i className={classnames("bi-github fs-3", styles.socials)}></i></a>
         <a href="https://www.linkedin.com/in/emmanuel-cobian/" target="_blank"><i
           className={classnames("bi-linkedin fs-3 mx-3", styles.socials)}></i></a>
         <a href="mailto:ecobian12310@gmail.com" target="_blank"><i
           className={classnames("bi-envelope-at-fill fs-3", styles.socials)}></i></a>
-      </>
+      </div>
     )
   }
 
@@ -25,7 +25,7 @@ export default function Home() {
             <div className='col-3'>
               <hr className={styles.hr} />
             </div>
-            <div className='col-9'>
+            <div className='col-3'>
               <p>About</p>
             </div>
           </div>
@@ -58,11 +58,12 @@ export default function Home() {
   }
 
   const useWindowWidth = () => {
-    const [width, setWidth] = useState(window.innerWidth)
+    const [width, setWidth] = useState(0)
     const handleResize = () => { setWidth(window.innerWidth) }
 
     useEffect(() => {
       window.addEventListener('resize', handleResize)
+      handleResize()
       return () => window.removeEventListener('resize', handleResize)
     }, [])
     return width
@@ -92,7 +93,7 @@ export default function Home() {
           </div>
 
           <div className={classnames("col-md-12 col-lg-6", styles.right)}>
-            <div id="about" className="my-5">
+            <div id="about" className="">
               {isBreakpoint ? (<h4 className="fw-bold mb-3">About</h4>) : (<div>&nbsp;</div>)}
               <p>
                 Back in 2015 as a rising senior in high school, I decided to sign up for a computer science course even

@@ -39,6 +39,7 @@
 
 .exp_date {
   flex: 0 0 25%;
+  margin-right: 5px;
   font-weight: 300;
 }
 
