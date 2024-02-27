@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Badge from 'react-bootstrap/Badge'
@@ -17,11 +17,26 @@ export default function Home() {
     )
   }
 
-  const LargeSocials = () => {
+  const LargeNav = ({ visibilities }) => {
+    let state
+    if (visibilities[0]) {
+      state = 0
+    } else if (visibilities[1]) {
+      state = 1
+    } else if (visibilities[2]) {
+      state = 2
+    }
+
+    const [active, setActive] = useState(state)
+
+    const handleClick = (item) => {
+      setActive(item)
+    }
+
     return (
       <div className='my-5'>
-        <a href='#about' className='text-decoration-none text-black'>
-          <div className={classnames('row', styles.nav_itm)}>
+        <a href='#about' onClick={() => handleClick(0)} className='text-decoration-none text-black'>
+          <div className={classnames('row', active == 0 ? styles.active : styles.nav_itm)}>
             <div className='col-3'>
               <hr className={styles.hr} />
             </div>
@@ -31,8 +46,8 @@ export default function Home() {
           </div>
         </a>
 
-        <a href='#experience' className='text-decoration-none text-black'>
-          <div className={classnames('row', styles.nav_itm)}>
+        <a href='#experience' onClick={() => handleClick(1)} className='text-decoration-none text-black'>
+          <div className={classnames('row', active == 1 ? styles.active : styles.nav_itm)}>
             <div className='col-3'>
               <hr className={styles.hr} />
             </div>
@@ -42,8 +57,8 @@ export default function Home() {
           </div>
         </a>
 
-        <a href='#projects' className='text-decoration-none text-black'>
-          <div className={classnames('row mb-5', styles.nav_itm)}>
+        <a href='#projects' onClick={() => handleClick(2)} className='text-decoration-none text-black'>
+          <div className={classnames('row mb-5', active == 2 ? styles.active : styles.nav_itm)}>
             <div className='col-3'>
               <hr className={styles.hr} />
             </div>
@@ -55,6 +70,19 @@ export default function Home() {
         <Socials />
       </div>
     )
+  }
+
+  const useIsVisible = (ref) => {
+    const [isIntersecting, setIntersecting] = useState(false)
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting))
+
+      observer.observe(ref.current)
+      return () => { observer.disconnect() }
+    }, [ref])
+
+    return isIntersecting
   }
 
   const useWindowWidth = () => {
@@ -71,6 +99,13 @@ export default function Home() {
 
   const width = useWindowWidth()
   const isBreakpoint = width < 992
+  const aboutRef = useRef()
+  const expRef = useRef() 
+  const projRef = useRef()
+  const aboutIsVisible = useIsVisible(aboutRef)
+  const expIsVisible = useIsVisible(expRef)
+  const projIsVisible = useIsVisible(projRef)
+
   return (
     <>
       <Head>
@@ -87,14 +122,14 @@ export default function Home() {
               <h3>Hi, my name is Emmanuel</h3>
               <h3>I'm a software developer</h3>
               <p className={styles.intro}>I'm a senior studying computer science at UC Berkeley and a software developer who builds web apps.</p>
-              {isBreakpoint ? (<Socials />) : (<LargeSocials />)}
+              {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]}/>)}
 
             </div>
           </div>
 
           <div className={classnames("col-md-12 col-lg-6", styles.right)}>
-            <div id="about" className="">
-              {isBreakpoint ? (<h4 className="fw-bold mb-3">About</h4>) : (<div>&nbsp;</div>)}
+            <div id="about" ref={aboutRef}>
+              {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
               <p>
                 Back in 2015 as a rising senior in high school, I decided to sign up for a computer science course even
                 though I had no idea of what the subject was about. Fast-forward to today, and I’ve had the privilege of
@@ -105,8 +140,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div id="experience" className="my-5">
-              {isBreakpoint ? (<h4 className="fw-bold mb-3">Experience</h4>) : (<div>&nbsp;</div>)}
+            <div id="experience" className="my-5" ref={expRef}>
+              {isBreakpoint ? (<h4 className={styles.title}>Experience</h4>) : (<div>&nbsp;</div>)}
 
               <div className={styles.exp_itm}>
                 <div className={styles.exp_date}>May 2023 - Present</div>
@@ -191,8 +226,8 @@ export default function Home() {
               </a>
             </div>
 
-            <div id="projects" className="my-5">
-              {isBreakpoint ? (<h4 className="fw-bold mb-3">Projects</h4>) : (<div>&nbsp;</div>)}
+            <div id="projects" className="my-5" ref={projRef}>
+              {isBreakpoint ? (<h4 className={styles.title}>Projects</h4>) : (<div>&nbsp;</div>)}
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
