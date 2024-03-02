@@ -150,7 +150,7 @@ export default function Home() {
                     accross team size, gender, experience levels, and work
                     history.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>React</Badge>
                   <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
                   <Badge pill className={styles.text_bg_custom}>Algorithms</Badge>
                 </div>
@@ -168,9 +168,12 @@ export default function Home() {
                     Janitorial using Next.js and Bootstrap. Designed a fast,
                     SEO-friendly site for search engines and speed.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
+                  <Badge pill className={styles.text_bg_custom}>React</Badge>
                   <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>HTML</Badge>
+                  <Badge pill className={styles.text_bg_custom}>CSS</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
                 </div>
               </div>
 
@@ -189,6 +192,7 @@ export default function Home() {
                   </p>
                   <Badge pill className={styles.text_bg_custom}>Python</Badge>
                   <Badge pill className={styles.text_bg_custom}>Pandas</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Matplotlib</Badge>
                   <Badge pill className={styles.text_bg_custom}>Web Scraping</Badge>
                 </div>
               </div>
@@ -206,9 +210,9 @@ export default function Home() {
                     Data Engineers.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>Python</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Sklearn</Badge>
                   <Badge pill className={styles.text_bg_custom}>Pandas</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Visualizations</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Data Science</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Matplotlib</Badge>
                 </div>
               </div>
 
@@ -233,9 +237,11 @@ export default function Home() {
                     routes to call the Spotify API and process data to generate
                     musical profiles and analysis for logged-in users.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>React</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Next.js API Routes</Badge>
                   <Badge pill className={styles.text_bg_custom}>Spotify API</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
                 </div>
               </div>
 
@@ -247,11 +253,11 @@ export default function Home() {
                   <p>
                     Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>React</Badge>
                   <Badge pill className={styles.text_bg_custom}>Styled Components</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
                   <Badge pill className={styles.text_bg_custom}>Web Scraping</Badge>
-                  <Badge pill className={styles.text_bg_custom}>SQL</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Databases</Badge>
+                  <Badge pill className={styles.text_bg_custom}>MySQL</Badge>
                 </div>
               </div>
 
@@ -265,7 +271,7 @@ export default function Home() {
                   </p>
                   <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
                   <Badge pill className={styles.text_bg_custom}>Web Sockets</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Facial Recognition</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Face-api.js</Badge>
                   <Badge pill className={styles.text_bg_custom}>MaxMSP</Badge>
                 </div>
               </div>
