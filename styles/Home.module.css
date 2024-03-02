@@ -1,9 +1,8 @@
 .hr {
   border: none;
-  height: 2px;
+  height: 4px;
   width: 25px;
-  color: black;
-  background-color: #000;
+  background-color: #6c584c;
   position: relative;
   top: -10%;
   -webkit-transition: all 0.2s;
@@ -13,19 +12,23 @@
 }
 
 .active {
+  color: #6c584c;
   width: 400px;
+
   & .hr {
     width: 75px;
   }
 }
 
 .nav_itm {
+  color: #6c584c;
   width: 250px;
   transition: all 0.2s;
 }
 
 .nav_itm:hover {
   width: 400px;
+
   & .hr {
     width: 75px;
   }
@@ -67,8 +70,21 @@
   color: #6c584c;
 }
 
+.arrow {
+  transition-property: margin;
+  transition-duration: 0.2s;
+}
+
+.exp_share {
+  transition: 0.1s;
+}
+
 .exp_share:hover {
   color: #adc178;
+
+  & .arrow {
+    margin-left: 2px;
+  }
 }
 
 .exp_desc {
@@ -83,15 +99,26 @@
 }
 
 .resume_link {
-  /* margin: 1em 0; */
   max-width: 180px;
   color: #000;
+  display: inline-block;
+  text-decoration: none;
+  background-image: linear-gradient(#adc178 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s,
 }
 
 .resume_link:hover {
-  text-decoration: underline;
-  text-decoration-color: #adc178;
-  text-decoration-thickness: 3px;
+  background-position: 100% 100%;
+  background-size: 100% 2px;
+
+  & .arrow {
+    margin-left: 5px;
+  }
 }
 
 #projects_link {
@@ -126,15 +153,7 @@
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {}
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
+@media (prefers-color-scheme: dark) {}
 
 @keyframes rotate {
   from {

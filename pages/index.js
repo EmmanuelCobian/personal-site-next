@@ -27,17 +27,10 @@ export default function Home() {
       state = 2
     }
 
-    const [clicked, setClicked] = useState(false)
-    const [active, setActive] = useState(state)
-
-    const handleClick = (item) => {
-      // setActive(item)
-    }
-
     return (
       <div className="my-5">
-        <a href="#about" onClick={() => handleClick(0)} className={classnames("text-decoration-none text-black")}>
-          <div className={classnames("row", active == 0 ? styles.active : styles.nav_itm)}>
+        <a href="#about" className={classnames("text-decoration-none")}>
+          <div className={classnames("row", state == 0 ? styles.active : styles.nav_itm)}>
             <div className="col-3">
               <hr className={styles.hr} />
             </div>
@@ -47,8 +40,8 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="#experience" onClick={() => handleClick(1)} className="text-decoration-none text-black">
-          <div className={classnames("row", active == 1 ? styles.active : styles.nav_itm)}>
+        <a href="#experience" className="text-decoration-none">
+          <div className={classnames("row", state == 1 ? styles.active : styles.nav_itm)}>
             <div className="col-3">
               <hr className={styles.hr} />
             </div>
@@ -58,8 +51,8 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="#projects" onClick={() => handleClick(2)} className="text-decoration-none text-black">
-          <div className={classnames("row mb-5", active == 2 ? styles.active : styles.nav_itm)}>
+        <a href="#projects" className="text-decoration-none">
+          <div className={classnames("row mb-5", state == 2 ? styles.active : styles.nav_itm)}>
             <div className="col-3">
               <hr className={styles.hr} />
             </div>
@@ -113,7 +106,6 @@ export default function Home() {
         <title>Emmanuel Cobian Duarte</title>
         <meta name="description" content="My personal site" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
@@ -170,7 +162,7 @@ export default function Home() {
                 <div className={styles.exp_desc}>
                   <a className="text-decoration-none" href="https://www.thegreenjanitorial.com/" target="_blank">
                     <p className={classnames(styles.exp_title, styles.exp_share)}>Website Developer • The Green Janitorial Corporation <i
-                      className="bi-arrow-up-right"></i></p>
+                      className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
                   <p>
                     Created and implemented a responsive website for The Green
@@ -222,8 +214,8 @@ export default function Home() {
               </div>
 
               <a className={styles.resume_link} href="/Resume_Cobian_Duarte_fa23.pdf">
-                <p>
-                  View Full Resume <i className="bi-arrow-right"></i></p>
+                <span>
+                  View Full Resume <i className={classnames("bi-arrow-right", styles.arrow)}></i></span>
               </a>
             </div>
 
@@ -233,7 +225,7 @@ export default function Home() {
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
                   <a className="text-decoration-none" href="https://exposify.vercel.app/" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Exposify <i className="bi-arrow-up-right"></i></p>
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>Exposify <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
                   <p>
                     A full-stack web application that connects to the Spotify API
@@ -251,7 +243,7 @@ export default function Home() {
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
                   <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className="bi-arrow-up-right"></i></p>
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
                   <p>
                     Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
@@ -267,7 +259,7 @@ export default function Home() {
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
                   <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/face-api" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Facial Expressions Music Player <i className="bi-arrow-up-right"></i></p>
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>Facial Expressions Music Player <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
                   <p>
                     This web application uses facial recognition to detect a user’s facial expressions and play music based on the emotion detected. The application uses the face-api.js library to detect facial expressions.
