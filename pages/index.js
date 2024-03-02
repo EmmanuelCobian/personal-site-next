@@ -112,9 +112,9 @@ export default function Home() {
         <section className="container pt-5">
           <div className="row">
             <div className={classnames("col-md-12 col-lg-6", styles.bio)} id="bio">
-              <h3>Hi, my name is Emmanuel</h3>
-              <h3>I’m a software developer</h3>
-              <p className={styles.intro}>I’m a senior studying computer science at UC Berkeley and a software developer who builds web apps.</p>
+              <h3>Hi! My name is Emmanuel</h3>
+              <h3>I'm a software developer</h3>
+              <p className={styles.intro}>I study computer science at UC Berkeley and works as a software developer who builds applications.</p>
               {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]} />)}
 
             </div>
@@ -128,8 +128,7 @@ export default function Home() {
                 though I had no idea of what the subject was about. Fast-forward to today, and I’ve had the privilege of
                 attending one of the top computer science programs in the nation while building software for major
                 departments on campus and creating a great network of people that care about me.
-                During my free time, I’m usually playing 8-ball pool, hiking, gaming, hanging out with friends, or checking
-                out new music.
+                During my free time, I enjoy playing 8-ball pool, listening to new music, hiking, and gaming with friends.
               </p>
             </div>
 
