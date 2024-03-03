@@ -114,7 +114,7 @@ export default function Home() {
             <div className={classnames("col-md-12 col-lg-6", styles.bio)} id="bio">
               <h3>Hi! My name is Emmanuel</h3>
               <h3>I’m a software developer</h3>
-              <p className={styles.intro}>I study computer science at UC Berkeley and works as a software developer who builds applications.</p>
+              <p className={styles.intro}>I study computer science at UC Berkeley and work as a software developer who builds applications.</p>
               {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]} />)}
 
             </div>
