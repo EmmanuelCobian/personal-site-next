@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Badge from "react-bootstrap/Badge"
@@ -66,19 +66,6 @@ export default function Home() {
     )
   }
 
-  const useIsVisible = (ref) => {
-    const [isIntersecting, setIntersecting] = useState(false)
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting))
-
-      observer.observe(ref.current)
-      return () => { observer.disconnect() }
-    }, [ref])
-
-    return isIntersecting
-  }
-
   const useWindowWidth = () => {
     const [width, setWidth] = useState(0)
     const handleResize = () => { setWidth(window.innerWidth) }
@@ -93,12 +80,51 @@ export default function Home() {
 
   const width = useWindowWidth()
   const isBreakpoint = width < 992
-  const aboutRef = useRef()
-  const expRef = useRef()
-  const projRef = useRef()
-  const aboutIsVisible = useIsVisible(aboutRef)
-  const expIsVisible = useIsVisible(expRef)
-  const projIsVisible = useIsVisible(projRef)
+
+  const [aboutVis, setAboutVis] = useState(true)
+  const [expVis, setExpVis] = useState(false)
+  const [projVis, setProjVis] = useState(false)
+
+
+  const checkBreakpoint = () => {
+    let width = window.innerWidth
+    let y = window.scrollY
+
+    if (width < 2000) {
+      if (y < 230) {
+        setAboutVis(true)
+        setExpVis(false)
+        setProjVis(false)
+      } else if (y >= 230 && y < 950) {
+        setAboutVis(false)
+        setExpVis(true)
+        setProjVis(false)
+      } else if (y >= 950) {
+        setAboutVis(false)
+        setExpVis(false)
+        setProjVis(true)
+      }
+    } else {
+      if (y < 230) {
+        setAboutVis(true)
+        setExpVis(false)
+        setProjVis(false)
+      } else if (y >= 230 && y < 500) {
+        setAboutVis(false)
+        setExpVis(true)
+        setProjVis(false)
+      } else if (y >= 500) {
+        setAboutVis(false)
+        setExpVis(false)
+        setProjVis(true)
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkBreakpoint)
+    return () => window.removeEventListener('scroll', checkBreakpoint)
+  }, [])
 
   return (
     <>
@@ -115,13 +141,13 @@ export default function Home() {
               <h3>Hi! My name is Emmanuel</h3>
               <h3>I’m a software developer</h3>
               <p className={styles.intro}>I study computer science at UC Berkeley and work as a software developer who builds applications.</p>
-              {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutIsVisible, expIsVisible, projIsVisible]} />)}
+              {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutVis, expVis, projVis]} />)}
 
             </div>
           </div>
 
           <div className={classnames("col-md-12 col-lg-6", styles.right)}>
-            <div id="about" ref={aboutRef}>
+            <div id="about">
               {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
               <p className={styles.about_bio}>
                 Back in 2015 as a rising senior in high school, I decided to sign up for a computer science course even
@@ -132,7 +158,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div id="experience" className="pt-5" ref={expRef}>
+            <div id="experience" className="pt-5">
               {isBreakpoint ? (<h4 className={styles.title}>Experience</h4>) : (<div>&nbsp;</div>)}
 
               <div className={styles.exp_itm}>
@@ -222,7 +248,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="py-5" ref={projRef}>
+            <div className="py-5">
               {isBreakpoint ? (<h4 id="projects" className={styles.title}>Projects</h4>) : (<div id="projects">&nbsp;</div>)}
 
               <div className={styles.proj_itm}>

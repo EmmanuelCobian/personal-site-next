@@ -62,7 +62,8 @@
 
 .exp_itm {
   display: flex;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
+  margin-top: 3em;
 }
 
 .exp_date {
@@ -136,7 +137,8 @@
 }
 
 .proj_itm {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
+  margin-top: 3em;
 }
 
 .proj_desc {
@@ -154,7 +156,7 @@
 @media (min-width: 992px) {
   .bio {
     position: fixed;
-    max-width: 40%;
+    max-width: 450px;
   }
 
   .right {
