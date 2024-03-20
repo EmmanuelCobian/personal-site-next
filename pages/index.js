@@ -149,7 +149,7 @@ export default function Home() {
           <div className={classnames("col-md-12 col-lg-6", styles.right)}>
             <div id="about">
               {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
-              <p className={styles.about_bio}>
+              <p className={classnames(styles.about_bio, "lead")}>
                 Back in 2015 as a rising senior in high school, I decided to sign up for a computer science course even
                 though I had no idea of what the subject was about. Fast-forward to today, and I’ve had the privilege of
                 attending one of the top computer science programs in the nation while building software for major
