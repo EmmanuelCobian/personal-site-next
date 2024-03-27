@@ -150,8 +150,7 @@ export default function Home() {
             <div id="about">
               {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
               <p className={classnames(styles.about_bio, "lead")}>
-                Back in 2015 as a rising senior in high school, I decided to sign up for a computer science course even
-                though I had no idea of what the subject was about. Fast-forward to today, and I’ve had the privilege of
+                Back in 2018 as a rising junior in high school, I decided to sign up for a computer science course despite not having a clue what anything coding related. Fast-forward to today, and I’ve had the privilege of
                 attending one of the top computer science programs in the nation while building software for major
                 departments on campus and creating a great network of people that care about me.
                 During my free time, I enjoy playing 8-ball pool, listening to new music, hiking, and gaming with friends.
