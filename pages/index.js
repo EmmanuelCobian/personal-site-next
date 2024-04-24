@@ -176,7 +176,7 @@ export default function Home() {
                     history.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
                   <Badge pill className={styles.text_bg_custom}>Algorithms</Badge>
                 </div>
               </div>
@@ -197,7 +197,6 @@ export default function Home() {
                   <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
                   <Badge pill className={styles.text_bg_custom}>HTML</Badge>
                   <Badge pill className={styles.text_bg_custom}>CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
                   <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
                 </div>
               </div>
@@ -263,9 +262,8 @@ export default function Home() {
                     musical profiles and analysis for logged-in users.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
                   <Badge pill className={styles.text_bg_custom}>Next.js API Routes</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Spotify API</Badge>
+                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
                   <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
                 </div>
               </div>
@@ -298,6 +296,21 @@ export default function Home() {
                   <Badge pill className={styles.text_bg_custom}>Web Sockets</Badge>
                   <Badge pill className={styles.text_bg_custom}>Face-api.js</Badge>
                   <Badge pill className={styles.text_bg_custom}>MaxMSP</Badge>
+                </div>
+              </div>
+
+              <div className={styles.proj_itm}>
+                <div className={styles.proj_desc}>
+                  <a className="text-decoration-none" href="https://github.com/luisricardodiaz/VibeS" target="_blank">
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>VibeS <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  </a>
+                  <p>
+                    Made during the 2023 CalHacks hackaton, VibeS is a web application that combines music and machine learning to create personalized playlists based on a picture. The application uses a Convolutional Neural Network to classify images based on their scenery and time of day to create a personalized playlist that fits the environment.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>React</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Neural Networks</Badge>
+                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Full-Stack</Badge>
                 </div>
               </div>
             </div>
