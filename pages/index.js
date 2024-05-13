@@ -140,9 +140,8 @@ export default function Home() {
             <div className={classnames("col-md-12 col-lg-6", styles.bio)} id="bio">
               <h3>Hi! My name is Emmanuel</h3>
               <h3>I’m a software developer</h3>
-              <p className={styles.intro}>I study computer science at UC Berkeley and work as a software developer who builds applications.</p>
+              <p className={styles.intro}>I'm a recent computer science graduate from UC Berkeley who works as a software developer building modern, responsive, and accessible applications.</p>
               {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutVis, expVis, projVis]} />)}
-
             </div>
           </div>
 
@@ -150,10 +149,7 @@ export default function Home() {
             <div id="about">
               {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
               <p className={classnames(styles.about_bio, "lead")}>
-                Back in 2018 as a rising junior in high school, I decided to sign up for a computer science course despite not having a clue what anything coding related. Fast-forward to today, and I’ve had the privilege of
-                attending one of the top computer science programs in the nation while building software for major
-                departments on campus and creating a great network of people that care about me.
-                During my free time, I enjoy playing 8-ball pool, listening to new music, hiking, and gaming with friends.
+                In 2018, as a rising junior in high school, I made the decision to enroll in a computer science course despite having no prior knowledge of coding. Fast-forward to today, and I've had the privilege of attending one of the top computer science programs in the nation. I've also gained experience building software for major departments on campus and have formed a strong network of supportive peers and mentors. In my free time, I enjoy playing 8-ball pool, discovering new music, hiking, and gaming with friends.
               </p>
             </div>
 
