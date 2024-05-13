@@ -130,7 +130,7 @@ export default function Home() {
     <>
       <Head>
         <title>Emmanuel Cobian Duarte</title>
-        <meta name="description" content="My personal site" />
+        <meta name="description" content="I'm a recent computer science graduate from UC Berkeley who works as a software developer building modern, responsive, and accessible applications." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
