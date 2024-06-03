@@ -236,7 +236,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <a className={styles.resume_link} href="/Resume_Cobian_Duarte_fa23.pdf">
+              <a className={styles.resume_link} href="/Resume_Cobian_Duarte.pdf">
                 <span>
                   View Full Resume <i className={classnames("bi-arrow-right", styles.arrow)}></i></span>
               </a>
