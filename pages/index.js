@@ -157,7 +157,7 @@ export default function Home() {
               {isBreakpoint ? (<h4 className={styles.title}>Experience</h4>) : (<div>&nbsp;</div>)}
 
               <div className={styles.exp_itm}>
-                <div className={styles.exp_date}>May 2023 - Present</div>
+                <div className={styles.exp_date}>May 2023 - May 2024</div>
                 <div className={styles.exp_desc}>
                   <p className={styles.exp_title}>
                     Software Development Fellow • UC Berkeley Haas School of
