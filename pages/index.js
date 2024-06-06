@@ -3,6 +3,7 @@ import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Badge from "react-bootstrap/Badge"
 import classnames from "classnames"
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const Socials = () => {
@@ -317,6 +318,7 @@ export default function Home() {
       <footer className="container text-center py-4">
         <p>&copy; 2023 Emmanuel Cobian Duarte</p>
       </footer>
+      <Analytics />
     </>
   );
 }
