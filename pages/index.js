@@ -160,7 +160,7 @@ export default function Home() {
                 <div className={styles.exp_date}>May 2023 - May 2024</div>
                 <div className={styles.exp_desc}>
                   <p className={styles.exp_title}>
-                    Software Development Fellow • UC Berkeley Haas School of
+                    Software Developer • MBA Program for Executives, Haas School of
                     Business
                   </p>
                   <p>
@@ -169,10 +169,12 @@ export default function Home() {
                     unique needs. Build an approximation algorithm to generate
                     optimally balanced teams based on user-defined priorities
                     accross team size, gender, experience levels, and work
-                    history.
+                    history. Worked and collaborated alongside other departments on campus to expand the original scope of the project to encompass their teams and unique needs, including new criteria and data layouts.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
+                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Danfo.js</Badge>
                   <Badge pill className={styles.text_bg_custom}>Algorithms</Badge>
                 </div>
               </div>
@@ -185,15 +187,13 @@ export default function Home() {
                       className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
                   <p>
-                    Created and implemented a responsive website for The Green
-                    Janitorial using Next.js and Bootstrap. Designed a fast,
-                    SEO-friendly site for search engines and speed.
+                    Worked as a freelancer to create and develop a responsive website for The Green
+                    Janitorial using HTML/CSS, Next.js, and Bootstrap. Optimized the site for SEO and fast load times, improving search engine visibility and enhancing the user experience. Communicated and worked alongside the company owners to discuss project goals, steps, and timeline.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>React</Badge>
                   <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
-                  <Badge pill className={styles.text_bg_custom}>HTML</Badge>
-                  <Badge pill className={styles.text_bg_custom}>CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
+                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
+                  <Badge pill className={styles.text_bg_custom}>SEO</Badge>
                 </div>
               </div>
 
@@ -202,18 +202,20 @@ export default function Home() {
                 <div className={styles.exp_desc}>
                   <p className={styles.exp_title}>Tech Fellow • UC Berkeley Career Center</p>
                   <p>
-                    Designed and implemented a python script to scrape content
+                    Tested and implemented a Python script using BeautifulSoup and Selenium to scrape content
                     from over 1000 employer websites to search for DEI Employment
                     keywords. Also worked on updating employer contacts by
                     parsing, analyzing, and visualizing data sets with over
                     200,000 data points to provide tangible and understandable
                     solutions to an audience of team members with limited
-                    technical knowledge.
+                    technical knowledge. Developed an interactive employee on-boarding web page using HTML/CSS, enhancing the user experience while streamlining the on-boarding process.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>Python</Badge>
                   <Badge pill className={styles.text_bg_custom}>Pandas</Badge>
                   <Badge pill className={styles.text_bg_custom}>Matplotlib</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Web Scraping</Badge>
+                  <Badge pill className={styles.text_bg_custom}>BeautifulSoup</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Selenium</Badge>
+                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
                 </div>
               </div>
 
@@ -236,7 +238,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <a className={styles.resume_link} href="/Resume_Cobian_Duarte.pdf">
+              <a className={styles.resume_link} href="/Emmanuel_Cobian_Resume.pdf">
                 <span>
                   View Full Resume <i className={classnames("bi-arrow-right", styles.arrow)}></i></span>
               </a>
@@ -244,6 +246,25 @@ export default function Home() {
 
             <div className="py-5">
               {isBreakpoint ? (<h4 id="projects" className={styles.title}>Projects</h4>) : (<div id="projects">&nbsp;</div>)}
+
+              <div className={styles.proj_itm}>
+                <div className={styles.proj_desc}>
+                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  </a>
+                  <p>
+                    Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>React</Badge>
+                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
+                  <Badge pill className={styles.text_bg_custom}>OAuth</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Styled Components</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Selenium</Badge>
+                  <Badge pill className={styles.text_bg_custom}>BeautifulSoup</Badge>
+                  <Badge pill className={styles.text_bg_custom}>MySQL</Badge>
+                </div>
+              </div>
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
@@ -258,25 +279,10 @@ export default function Home() {
                     musical profiles and analysis for logged-in users.
                   </p>
                   <Badge pill className={styles.text_bg_custom}>React</Badge>
+                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
                   <Badge pill className={styles.text_bg_custom}>Next.js API Routes</Badge>
                   <Badge pill className={styles.text_bg_custom}>REST API</Badge>
                   <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
-                </div>
-              </div>
-
-              <div className={styles.proj_itm}>
-                <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
-                  </a>
-                  <p>
-                    Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
-                  </p>
-                  <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Styled Components</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Web Scraping</Badge>
-                  <Badge pill className={styles.text_bg_custom}>MySQL</Badge>
                 </div>
               </div>
 
@@ -315,7 +321,7 @@ export default function Home() {
       </main >
 
       <footer className="container text-center py-4">
-        <p>&copy; 2023 Emmanuel Cobian Duarte</p>
+        <p>&copy; 2024 Emmanuel Cobian Duarte</p>
       </footer>
     </>
   );
