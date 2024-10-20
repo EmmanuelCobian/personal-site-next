@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Badge from "react-bootstrap/Badge"
+import Image from 'react-bootstrap/Image'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import classnames from "classnames"
 
 export default function Home() {
@@ -149,7 +152,7 @@ export default function Home() {
             <div id="about">
               {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
               <p className={classnames(styles.about_bio, "lead")}>
-                In 2018, as a rising junior in high school, I made the decision to enroll in a computer science course despite having no prior knowledge of coding. Fast-forward to today, and I’ve had the privilege of attending one of the top computer science programs in the nation. I’ve also gained experience building software for major departments on campus and have formed a strong network of supportive peers and mentors. In my free time, I enjoy playing 8-ball pool, discovering new music, hiking, and gaming with friends.
+                In 2018, as a rising junior in high school, I made the decision to enroll in a computer science course despite having no prior knowledge of coding. Fast-forward to today, and I’ve had the privilege of attending one of the top computer science programs in the nation. I’ve also gained experience building software for major departments on campus and have formed a strong network of supportive peers and mentors. In my free time, I enjoy listening to new music, playing 8 ball pool, hiking, and trying out new food spots.
               </p>
             </div>
 
