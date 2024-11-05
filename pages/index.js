@@ -271,7 +271,7 @@ export default function Home() {
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://exposify.vercel.app/" target="_blank">
+                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/exposify" target="_blank">
                     <p className={classnames(styles.exp_title, styles.exp_share)}>Exposify <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
                   <p>
