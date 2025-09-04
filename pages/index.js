@@ -2,9 +2,6 @@ import { useState, useEffect } from "react"
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Badge from "react-bootstrap/Badge"
-import Image from 'react-bootstrap/Image'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import classnames from "classnames"
 
 export default function Home() {
@@ -160,6 +157,24 @@ export default function Home() {
               {isBreakpoint ? (<h4 className={styles.title}>Experience</h4>) : (<div>&nbsp;</div>)}
 
               <div className={styles.exp_itm}>
+                <div className={styles.exp_date}>May 2025 - Aug 2025</div>
+                <div className={styles.exp_desc}>
+                  <p className={styles.exp_title}>
+                    Software Engineering Intern • Goplai
+                  </p>
+                  <p>
+                    Fine-tuned custom YOLOv11 and SlowFast models for basketball player, ball, and hoop detections, manually annotating 500+ frames and clips to create high-quality datasets. Built a cloud-native, reat-time basketball analysis API with FastAPI, integrating detection, player tracking, scoring, and ball posession logic with AWS S3 storage and WebSocket streaming. Deployed application in Docker containers on AWS EC2 with automated health checks to ensure reliability and scalability.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>AWS</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Computer Vision</Badge>
+                  <Badge pill className={styles.text_bg_custom}>FastAPI</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Docker</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Ultralytics YOLO</Badge>
+                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
+                </div>
+              </div>
+
+              <div className={styles.exp_itm}>
                 <div className={styles.exp_date}>May 2023 - May 2024</div>
                 <div className={styles.exp_desc}>
                   <p className={styles.exp_title}>
@@ -252,6 +267,24 @@ export default function Home() {
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
+                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/icebreakers" target="_blank">
+                    <p className={classnames(styles.exp_title, styles.exp_share)}>ICE Breakers <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  </a>
+                  <p>
+                    Developed a React Native mobile app that provides multilingual emergency support for immigrant communities, featuring a panic button, Red Card tool, and local resource integration.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>React Native</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Tailwind CSS</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Firebase</Badge>
+                  <Badge pill className={styles.text_bg_custom}>Express.js</Badge>
+                  <Badge pill className={styles.text_bg_custom}>SQL Lite</Badge>
+                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
+                  <Badge pill className={styles.text_bg_custom}></Badge>
+                </div>
+              </div>
+
+              <div className={styles.proj_itm}>
+                <div className={styles.proj_desc}>
                   <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
                     <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
                   </a>
@@ -324,7 +357,7 @@ export default function Home() {
       </main >
 
       <footer className="container text-center py-4">
-        <p>&copy; 2024 Emmanuel Cobian Duarte</p>
+        <p>&copy; 2025 Emmanuel Cobian Duarte</p>
       </footer>
     </>
   );
