@@ -3,6 +3,7 @@ import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Badge from "react-bootstrap/Badge"
 import classnames from "classnames"
+import Footer from "@/shared/footer"
 
 export default function Home() {
   const Socials = () => {
@@ -356,9 +357,7 @@ export default function Home() {
         </section>
       </main >
 
-      <footer className="container text-center py-4">
-        <p>&copy; 2025 Emmanuel Cobian Duarte</p>
-      </footer>
+      <Footer />
     </>
   );
 }
