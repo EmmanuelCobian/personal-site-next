@@ -1,37 +1,50 @@
-import { useState, useEffect } from "react"
-import Head from "next/head"
-import styles from "@/styles/Home.module.css"
-import Badge from "react-bootstrap/Badge"
-import classnames from "classnames"
-import Footer from "@/shared/footer"
+import { useState, useEffect } from "react";
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import Badge from "react-bootstrap/Badge";
+import classnames from "classnames";
+import Footer from "@/shared/footer";
 
 export default function Home() {
   const Socials = () => {
     return (
       <div className="mb-5">
-        <a href="https://github.com/EmmanuelCobian" target="_blank"><i className={classnames("bi-github fs-3", styles.socials)}></i></a>
-        <a href="https://www.linkedin.com/in/emmanuel-cobian/" target="_blank"><i
-          className={classnames("bi-linkedin fs-3 mx-3", styles.socials)}></i></a>
-        <a href="mailto:ecobian12310@gmail.com" target="_blank"><i
-          className={classnames("bi-envelope-at-fill fs-3", styles.socials)}></i></a>
+        <a href="https://github.com/EmmanuelCobian" target="_blank">
+          <i className={classnames("bi-github fs-3", styles.socials)}></i>
+        </a>
+        <a href="https://www.linkedin.com/in/emmanuel-cobian/" target="_blank">
+          <i
+            className={classnames("bi-linkedin fs-3 mx-3", styles.socials)}
+          ></i>
+        </a>
+        <a href="mailto:ecobian12310@gmail.com" target="_blank">
+          <i
+            className={classnames("bi-envelope-at-fill fs-3", styles.socials)}
+          ></i>
+        </a>
       </div>
-    )
-  }
+    );
+  };
 
   const LargeNav = ({ visibilities }) => {
-    let state
+    let state;
     if (visibilities[0]) {
-      state = 0
+      state = 0;
     } else if (visibilities[1]) {
-      state = 1
+      state = 1;
     } else if (visibilities[2]) {
-      state = 2
+      state = 2;
     }
 
     return (
       <div className="my-5">
         <a href="#about" className={classnames("text-decoration-none")}>
-          <div className={classnames("row", state == 0 ? styles.active : styles.nav_itm)}>
+          <div
+            className={classnames(
+              "row",
+              state == 0 ? styles.active : styles.nav_itm,
+            )}
+          >
             <div className="col-3">
               <hr className={styles.hr} />
             </div>
@@ -42,7 +55,12 @@ export default function Home() {
         </a>
 
         <a href="#experience" className="text-decoration-none">
-          <div className={classnames("row", state == 1 ? styles.active : styles.nav_itm)}>
+          <div
+            className={classnames(
+              "row",
+              state == 1 ? styles.active : styles.nav_itm,
+            )}
+          >
             <div className="col-3">
               <hr className={styles.hr} />
             </div>
@@ -53,7 +71,12 @@ export default function Home() {
         </a>
 
         <a href="#projects" className="text-decoration-none">
-          <div className={classnames("row mb-5", state == 2 ? styles.active : styles.nav_itm)}>
+          <div
+            className={classnames(
+              "row mb-5",
+              state == 2 ? styles.active : styles.nav_itm,
+            )}
+          >
             <div className="col-3">
               <hr className={styles.hr} />
             </div>
@@ -64,98 +87,171 @@ export default function Home() {
         </a>
         <Socials />
       </div>
-    )
-  }
+    );
+  };
 
   const useWindowWidth = () => {
-    const [width, setWidth] = useState(0)
-    const handleResize = () => { setWidth(window.innerWidth) }
+    const [width, setWidth] = useState(0);
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
 
     useEffect(() => {
-      window.addEventListener("resize", handleResize)
-      handleResize()
-      return () => window.removeEventListener("resize", handleResize)
-    }, [])
-    return width
-  }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    return width;
+  };
 
-  const width = useWindowWidth()
-  const isBreakpoint = width < 992
+  const width = useWindowWidth();
+  const isBreakpoint = width < 992;
 
-  const [aboutVis, setAboutVis] = useState(true)
-  const [expVis, setExpVis] = useState(false)
-  const [projVis, setProjVis] = useState(false)
-
+  const [aboutVis, setAboutVis] = useState(true);
+  const [expVis, setExpVis] = useState(false);
+  const [projVis, setProjVis] = useState(false);
 
   const checkBreakpoint = () => {
-    let width = window.innerWidth
-    let y = window.scrollY
+    let width = window.innerWidth;
+    let y = window.scrollY;
 
     if (width < 2000) {
       if (y < 230) {
-        setAboutVis(true)
-        setExpVis(false)
-        setProjVis(false)
+        setAboutVis(true);
+        setExpVis(false);
+        setProjVis(false);
       } else if (y >= 230 && y < 950) {
-        setAboutVis(false)
-        setExpVis(true)
-        setProjVis(false)
+        setAboutVis(false);
+        setExpVis(true);
+        setProjVis(false);
       } else if (y >= 950) {
-        setAboutVis(false)
-        setExpVis(false)
-        setProjVis(true)
+        setAboutVis(false);
+        setExpVis(false);
+        setProjVis(true);
       }
     } else {
       if (y < 230) {
-        setAboutVis(true)
-        setExpVis(false)
-        setProjVis(false)
+        setAboutVis(true);
+        setExpVis(false);
+        setProjVis(false);
       } else if (y >= 230 && y < 500) {
-        setAboutVis(false)
-        setExpVis(true)
-        setProjVis(false)
+        setAboutVis(false);
+        setExpVis(true);
+        setProjVis(false);
       } else if (y >= 500) {
-        setAboutVis(false)
-        setExpVis(false)
-        setProjVis(true)
+        setAboutVis(false);
+        setExpVis(false);
+        setProjVis(true);
       }
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', checkBreakpoint)
-    return () => window.removeEventListener('scroll', checkBreakpoint)
-  }, [])
+    window.addEventListener("scroll", checkBreakpoint);
+    return () => window.removeEventListener("scroll", checkBreakpoint);
+  }, []);
 
   return (
     <>
       <Head>
         <title>Emmanuel Cobian Duarte</title>
-        <meta name="description" content="I'm a recent computer science graduate from UC Berkeley who works as a software developer building modern, responsive, and accessible applications." />
+        <meta
+          name="description"
+          content="I'm a recent computer science graduate from UC Berkeley who works as a software developer building modern, responsive, and accessible applications."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <main>
         <section className="container pt-5">
           <div className="row">
-            <div className={classnames("col-md-12 col-lg-6", styles.bio)} id="bio">
+            <div
+              className={classnames("col-md-12 col-lg-6", styles.bio)}
+              id="bio"
+            >
               <h3>Hi! My name is Emmanuel</h3>
               <h3>I’m a software developer</h3>
-              <p className={styles.intro}>I’m a recent computer science graduate from UC Berkeley who works as a software developer building modern, responsive, and accessible applications.</p>
-              {isBreakpoint ? (<Socials />) : (<LargeNav visibilities={[aboutVis, expVis, projVis]} />)}
+              <p className={styles.intro}>
+                I’m a recent computer science graduate from UC Berkeley who
+                works as a software developer building modern, responsive, and
+                accessible applications.
+              </p>
+              {isBreakpoint ? (
+                <Socials />
+              ) : (
+                <LargeNav visibilities={[aboutVis, expVis, projVis]} />
+              )}
             </div>
           </div>
 
           <div className={classnames("col-md-12 col-lg-6", styles.right)}>
             <div id="about">
-              {isBreakpoint ? (<h4 className={styles.title}>About</h4>) : (<div>&nbsp;</div>)}
+              {isBreakpoint ? (
+                <h4 className={styles.title}>About</h4>
+              ) : (
+                <div>&nbsp;</div>
+              )}
               <p className={classnames(styles.about_bio, "lead")}>
-                In 2018, as a rising junior in high school, I made the decision to enroll in a computer science course despite having no prior knowledge of coding. Fast-forward to today, and I’ve had the privilege of attending one of the top computer science programs in the nation. I’ve also gained experience building software for major departments on campus and have formed a strong network of supportive peers and mentors. In my free time, I enjoy listening to new music, playing 8 ball pool, hiking, and trying out new food spots.
+                In 2018, as a rising junior in high school, I made the decision
+                to enroll in a computer science course despite having no prior
+                knowledge of coding. Fast-forward to today, and I’ve had the
+                privilege of attending one of the top computer science programs
+                in the nation. I’ve also gained experience building software for
+                major departments on campus and have formed a strong network of
+                supportive peers and mentors. In my free time, I enjoy listening
+                to new music, playing pickleball, hiking, and flying tiny
+                whoops.
               </p>
             </div>
 
             <div id="experience" className="pt-5">
-              {isBreakpoint ? (<h4 className={styles.title}>Experience</h4>) : (<div>&nbsp;</div>)}
+              {isBreakpoint ? (
+                <h4 className={styles.title}>Experience</h4>
+              ) : (
+                <div>&nbsp;</div>
+              )}
+
+              <div className={styles.exp_itm}>
+                <div className={styles.exp_date}>Jan 2026 - Jun 2026</div>
+                <div className={styles.exp_desc}>
+                  <p className={styles.exp_title}>
+                    Software Engineering Intern • EquityBound
+                  </p>
+                  <p>
+                    Diagnosed and resolved a MongoDB geospatial performance
+                    bottleneck on the business map endpoint by adding a 2dsphere
+                    index, switching to $geoWithin queries, cleaning corrupted
+                    geo data, adding Redis caching, and parallelizing backend
+                    fetches, cutting query execution time from 60ms to 13ms
+                    (4.6x faster) and reducing documents scanned by 95.7%.
+                    Shipped a new county demographics feature on the interactive
+                    map, adding hover tooltips that surface sourced figures like
+                    median household income, crime rate, and median age. Drove a
+                    cross-browser, cross-device UAT bug-fixing effort spanning
+                    6+ major product features, resolving high- and
+                    medium-severity layout, overflow, and contrast issues across
+                    mobile, tablet, and desktop.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>
+                    MongoDB
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Next.js
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Node.js
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    REST API
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Performance Optimization
+                  </Badge>
+                </div>
+              </div>
 
               <div className={styles.exp_itm}>
                 <div className={styles.exp_date}>May 2025 - Aug 2025</div>
@@ -164,14 +260,34 @@ export default function Home() {
                     Software Engineering Intern • Goplai
                   </p>
                   <p>
-                    Fine-tuned custom YOLOv11 and SlowFast models for basketball player, ball, and hoop detections, manually annotating 500+ frames and clips to create high-quality datasets. Built a cloud-native, reat-time basketball analysis API with FastAPI, integrating detection, player tracking, scoring, and ball posession logic with AWS S3 storage and WebSocket streaming. Deployed application in Docker containers on AWS EC2 with automated health checks to ensure reliability and scalability.
+                    Fine-tuned custom YOLOv11 and SlowFast models for basketball
+                    player, ball, and hoop detections, manually annotating 500+
+                    frames and clips to create high-quality datasets. Built a
+                    cloud-native, reat-time basketball analysis API with
+                    FastAPI, integrating detection, player tracking, scoring,
+                    and ball posession logic with AWS S3 storage and WebSocket
+                    streaming. Deployed application in Docker containers on AWS
+                    EC2 with automated health checks to ensure reliability and
+                    scalability.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>AWS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Computer Vision</Badge>
-                  <Badge pill className={styles.text_bg_custom}>FastAPI</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Docker</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Ultralytics YOLO</Badge>
-                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    AWS
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Computer Vision
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    FastAPI
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Docker
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Ultralytics YOLO
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    REST API
+                  </Badge>
                 </div>
               </div>
 
@@ -179,183 +295,401 @@ export default function Home() {
                 <div className={styles.exp_date}>May 2023 - May 2024</div>
                 <div className={styles.exp_desc}>
                   <p className={styles.exp_title}>
-                    Software Developer • MBA Program for Executives, Haas School of
-                    Business
+                    Software Developer • MBA Program for Executives, Haas School
+                    of Business
                   </p>
                   <p>
                     Developed a web application using Next.js that efficiently
-                    enables users to create personalized teams according to their
-                    unique needs. Build an approximation algorithm to generate
-                    optimally balanced teams based on user-defined priorities
-                    accross team size, gender, experience levels, and work
-                    history. Worked and collaborated alongside other departments on campus to expand the original scope of the project to encompass their teams and unique needs, including new criteria and data layouts.
+                    enables users to create personalized teams according to
+                    their unique needs. Build an approximation algorithm to
+                    generate optimally balanced teams based on user-defined
+                    priorities accross team size, gender, experience levels, and
+                    work history. Worked and collaborated alongside other
+                    departments on campus to expand the original scope of the
+                    project to encompass their teams and unique needs, including
+                    new criteria and data layouts.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Next.js</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Danfo.js</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Algorithms</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    HTML/CSS
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Next.js
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Danfo.js
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Algorithms
+                  </Badge>
                 </div>
               </div>
 
               <div className={styles.exp_itm}>
                 <div className={styles.exp_date}>Jun 2023 - Jul 2023</div>
                 <div className={styles.exp_desc}>
-                  <a className="text-decoration-none" href="https://www.thegreenjanitorial.com/" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Website Developer • The Green Janitorial Corporation <i
-                      className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  <a
+                    className="text-decoration-none"
+                    href="https://www.thegreenjanitorial.com/"
+                    target="_blank"
+                  >
+                    <p
+                      className={classnames(styles.exp_title, styles.exp_share)}
+                    >
+                      Website Developer • The Green Janitorial Corporation{" "}
+                      <i
+                        className={classnames(
+                          "bi-arrow-up-right",
+                          styles.arrow,
+                        )}
+                      ></i>
+                    </p>
                   </a>
                   <p>
-                    Worked as a freelancer to create and develop a responsive website for The Green
-                    Janitorial using HTML/CSS, Next.js, and Bootstrap. Optimized the site for SEO and fast load times, improving search engine visibility and enhancing the user experience. Communicated and worked alongside the company owners to discuss project goals, steps, and timeline.
+                    Worked as a freelancer to create and develop a responsive
+                    website for The Green Janitorial using HTML/CSS, Next.js,
+                    and Bootstrap. Optimized the site for SEO and fast load
+                    times, improving search engine visibility and enhancing the
+                    user experience. Communicated and worked alongside the
+                    company owners to discuss project goals, steps, and
+                    timeline.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
-                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>SEO</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Bootstrap
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    HTML/CSS
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    SEO
+                  </Badge>
                 </div>
               </div>
 
               <div className={styles.exp_itm}>
                 <div className={styles.exp_date}>Sep 2021 - May 2023</div>
                 <div className={styles.exp_desc}>
-                  <p className={styles.exp_title}>Tech Fellow • UC Berkeley Career Center</p>
-                  <p>
-                    Tested and implemented a Python script using BeautifulSoup and Selenium to scrape content
-                    from over 1000 employer websites to search for DEI Employment
-                    keywords. Also worked on updating employer contacts by
-                    parsing, analyzing, and visualizing data sets with over
-                    200,000 data points to provide tangible and understandable
-                    solutions to an audience of team members with limited
-                    technical knowledge. Developed an interactive employee on-boarding web page using HTML/CSS, enhancing the user experience while streamlining the on-boarding process.
+                  <p className={styles.exp_title}>
+                    Tech Fellow • UC Berkeley Career Center
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Python</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Pandas</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Matplotlib</Badge>
-                  <Badge pill className={styles.text_bg_custom}>BeautifulSoup</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Selenium</Badge>
-                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
+                  <p>
+                    Tested and implemented a Python script using BeautifulSoup
+                    and Selenium to scrape content from over 1000 employer
+                    websites to search for DEI Employment keywords. Also worked
+                    on updating employer contacts by parsing, analyzing, and
+                    visualizing data sets with over 200,000 data points to
+                    provide tangible and understandable solutions to an audience
+                    of team members with limited technical knowledge. Developed
+                    an interactive employee on-boarding web page using HTML/CSS,
+                    enhancing the user experience while streamlining the
+                    on-boarding process.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Python
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Pandas
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Matplotlib
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    BeautifulSoup
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Selenium
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    HTML/CSS
+                  </Badge>
                 </div>
               </div>
 
               <div className={styles.exp_itm}>
                 <div className={styles.exp_date}>Mar 2022 - Sep 2022</div>
                 <div className={styles.exp_desc}>
-                  <p className={styles.exp_title}>Data Challenge Finalist • Meta</p>
-                  <p>
-                    Explored, analyzed, and aggregated large data sets to provide
-                    actionable information, and create intuitive visualizations to
-                    convey those results to a broad audience. Also presented a
-                    data-driven product pitch, which included data visualizations,
-                    business strategy, and recommendations to Data Scientists and
-                    Data Engineers.
+                  <p className={styles.exp_title}>
+                    Data Challenge Finalist • Meta
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Python</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Sklearn</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Pandas</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Matplotlib</Badge>
+                  <p>
+                    Explored, analyzed, and aggregated large data sets to
+                    provide actionable information, and create intuitive
+                    visualizations to convey those results to a broad audience.
+                    Also presented a data-driven product pitch, which included
+                    data visualizations, business strategy, and recommendations
+                    to Data Scientists and Data Engineers.
+                  </p>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Python
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Sklearn
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Pandas
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Matplotlib
+                  </Badge>
                 </div>
               </div>
 
-              <a className={styles.resume_link} href="/Emmanuel_Cobian_Resume.pdf">
+              <a
+                className={styles.resume_link}
+                href="/Emmanuel_Cobian_Resume.pdf"
+              >
                 <span>
-                  View Full Resume <i className={classnames("bi-arrow-right", styles.arrow)}></i></span>
+                  View Full Resume{" "}
+                  <i className={classnames("bi-arrow-right", styles.arrow)}></i>
+                </span>
               </a>
             </div>
 
             <div className="py-5">
-              {isBreakpoint ? (<h4 id="projects" className={styles.title}>Projects</h4>) : (<div id="projects">&nbsp;</div>)}
+              {isBreakpoint ? (
+                <h4 id="projects" className={styles.title}>
+                  Projects
+                </h4>
+              ) : (
+                <div id="projects">&nbsp;</div>
+              )}
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/icebreakers" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>ICE Breakers <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  <a
+                    className="text-decoration-none"
+                    href="https://github.com/EmmanuelCobian/icebreakers"
+                    target="_blank"
+                  >
+                    <p
+                      className={classnames(styles.exp_title, styles.exp_share)}
+                    >
+                      ICE Breakers{" "}
+                      <i
+                        className={classnames(
+                          "bi-arrow-up-right",
+                          styles.arrow,
+                        )}
+                      ></i>
+                    </p>
                   </a>
                   <p>
-                    Developed a React Native mobile app that provides multilingual emergency support for immigrant communities, featuring a panic button, Red Card tool, and local resource integration.
+                    Developed a React Native mobile app that provides
+                    multilingual emergency support for immigrant communities,
+                    featuring a panic button, Red Card tool, and local resource
+                    integration.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>React Native</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Tailwind CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Firebase</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Express.js</Badge>
-                  <Badge pill className={styles.text_bg_custom}>SQL Lite</Badge>
-                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React Native
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Tailwind CSS
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Firebase
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Express.js
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    SQL Lite
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    REST API
+                  </Badge>
                   <Badge pill className={styles.text_bg_custom}></Badge>
                 </div>
               </div>
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/rate-my-classes" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Rate My Classes <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  <a
+                    className="text-decoration-none"
+                    href="https://github.com/EmmanuelCobian/rate-my-classes"
+                    target="_blank"
+                  >
+                    <p
+                      className={classnames(styles.exp_title, styles.exp_share)}
+                    >
+                      Rate My Classes{" "}
+                      <i
+                        className={classnames(
+                          "bi-arrow-up-right",
+                          styles.arrow,
+                        )}
+                      ></i>
+                    </p>
                   </a>
                   <p>
-                    Built from the ground up using Next.js and MySQL, Rate My Classes is a web application that allows UC Berkeley students to rate and review their classes. The application uses an express.js server to handle API requests and a MySQL database to store user data such as login information, reviews, and ratings.
+                    Built from the ground up using Next.js and MySQL, Rate My
+                    Classes is a web application that allows UC Berkeley
+                    students to rate and review their classes. The application
+                    uses an express.js server to handle API requests and a MySQL
+                    database to store user data such as login information,
+                    reviews, and ratings.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>OAuth</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Styled Components</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Bootstrap</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Selenium</Badge>
-                  <Badge pill className={styles.text_bg_custom}>BeautifulSoup</Badge>
-                  <Badge pill className={styles.text_bg_custom}>MySQL</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    HTML/CSS
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    OAuth
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Styled Components
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Bootstrap
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Selenium
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    BeautifulSoup
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    MySQL
+                  </Badge>
                 </div>
               </div>
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/exposify" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Exposify <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  <a
+                    className="text-decoration-none"
+                    href="https://github.com/EmmanuelCobian/exposify"
+                    target="_blank"
+                  >
+                    <p
+                      className={classnames(styles.exp_title, styles.exp_share)}
+                    >
+                      Exposify{" "}
+                      <i
+                        className={classnames(
+                          "bi-arrow-up-right",
+                          styles.arrow,
+                        )}
+                      ></i>
+                    </p>
                   </a>
                   <p>
-                    A full-stack web application that connects to the Spotify API
-                    and analyzes a user’s top artists and playlists to provide
-                    personalized music insights. Uses a backend using Next.js API
-                    routes to call the Spotify API and process data to generate
-                    musical profiles and analysis for logged-in users.
+                    A full-stack web application that connects to the Spotify
+                    API and analyzes a user’s top artists and playlists to
+                    provide personalized music insights. Uses a backend using
+                    Next.js API routes to call the Spotify API and process data
+                    to generate musical profiles and analysis for logged-in
+                    users.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>HTML/CSS</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Next.js API Routes</Badge>
-                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Vercel</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    HTML/CSS
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Next.js API Routes
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    REST API
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Vercel
+                  </Badge>
                 </div>
               </div>
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://github.com/EmmanuelCobian/face-api" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>Facial Expressions Music Player <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  <a
+                    className="text-decoration-none"
+                    href="https://github.com/EmmanuelCobian/face-api"
+                    target="_blank"
+                  >
+                    <p
+                      className={classnames(styles.exp_title, styles.exp_share)}
+                    >
+                      Facial Expressions Music Player{" "}
+                      <i
+                        className={classnames(
+                          "bi-arrow-up-right",
+                          styles.arrow,
+                        )}
+                      ></i>
+                    </p>
                   </a>
                   <p>
-                    This web application uses facial recognition to detect a user’s facial expressions and play music based on the emotion detected. The application uses the face-api.js library to detect facial expressions.
+                    This web application uses facial recognition to detect a
+                    user’s facial expressions and play music based on the
+                    emotion detected. The application uses the face-api.js
+                    library to detect facial expressions.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>Javascript</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Web Sockets</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Face-api.js</Badge>
-                  <Badge pill className={styles.text_bg_custom}>MaxMSP</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Javascript
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Web Sockets
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Face-api.js
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    MaxMSP
+                  </Badge>
                 </div>
               </div>
 
               <div className={styles.proj_itm}>
                 <div className={styles.proj_desc}>
-                  <a className="text-decoration-none" href="https://github.com/luisricardodiaz/VibeS" target="_blank">
-                    <p className={classnames(styles.exp_title, styles.exp_share)}>VibeS <i className={classnames("bi-arrow-up-right", styles.arrow)}></i></p>
+                  <a
+                    className="text-decoration-none"
+                    href="https://github.com/luisricardodiaz/VibeS"
+                    target="_blank"
+                  >
+                    <p
+                      className={classnames(styles.exp_title, styles.exp_share)}
+                    >
+                      VibeS{" "}
+                      <i
+                        className={classnames(
+                          "bi-arrow-up-right",
+                          styles.arrow,
+                        )}
+                      ></i>
+                    </p>
                   </a>
                   <p>
-                    Made during the 2023 CalHacks hackaton, VibeS is a web application that combines music and machine learning to create personalized playlists based on a picture. The application uses a Convolutional Neural Network to classify images based on their scenery and time of day to create a personalized playlist that fits the environment.
+                    Made during the 2023 CalHacks hackaton, VibeS is a web
+                    application that combines music and machine learning to
+                    create personalized playlists based on a picture. The
+                    application uses a Convolutional Neural Network to classify
+                    images based on their scenery and time of day to create a
+                    personalized playlist that fits the environment.
                   </p>
-                  <Badge pill className={styles.text_bg_custom}>React</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Neural Networks</Badge>
-                  <Badge pill className={styles.text_bg_custom}>REST API</Badge>
-                  <Badge pill className={styles.text_bg_custom}>Full-Stack</Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    React
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Neural Networks
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    REST API
+                  </Badge>
+                  <Badge pill className={styles.text_bg_custom}>
+                    Full-Stack
+                  </Badge>
                 </div>
               </div>
             </div>
           </div>
         </section>
-      </main >
+      </main>
 
       <Footer />
     </>
